@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiApp1"
+             xmlns:dataGrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             x:Class="MauiApp1.MainPage">
+    <ContentPage.BindingContext>
+        <local:OrderInfoRepository x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+
+    <dataGrid:SfDataGrid x:Name="dataGrid"
+                         ItemsSource="{Binding OrderInfoCollection}" 
+                         SelectionMode="Single"
+                         ColumnWidthMode="Auto">
+        <dataGrid:SfDataGrid.DefaultStyle>
+            <dataGrid:DataGridStyle SelectedRowTextColor="Red">
+            </dataGrid:DataGridStyle>
+        </dataGrid:SfDataGrid.DefaultStyle>
+        <dataGrid:SfDataGrid.Columns>
+            <dataGrid:DataGridTemplateColumn HeaderText="Order ID" MappingName="OrderID">
+                <dataGrid:DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding OrderID}"/>
+                    </DataTemplate>
+                </dataGrid:DataGridTemplateColumn.CellTemplate>
+            </dataGrid:DataGridTemplateColumn>
+        </dataGrid:SfDataGrid.Columns>
+    </dataGrid:SfDataGrid>
+</ContentPage>
