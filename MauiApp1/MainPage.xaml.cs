@@ -1,5 +1,6 @@
 ﻿
 using Syncfusion.Maui.DataGrid;
+using Syncfusion.Maui.Inputs;
 
 namespace MauiApp1
 {
@@ -30,7 +31,7 @@ namespace MauiApp1
                 if (this.DataGrid.SelectedRows.Any(row => row == dataColumn.RowData))
                 {
                     gridCell.TextColor = gridStyle?.SelectedRowTextColor;
-                    Label sfLabel = dataColumn.ColumnElement?.Content as Label;
+                    SfNumericEntry sfLabel = dataColumn.ColumnElement?.Content as SfNumericEntry;
                     if (sfLabel != null)
                     {
                         sfLabel.TextColor = gridStyle?.SelectedRowTextColor;
@@ -39,7 +40,7 @@ namespace MauiApp1
                 else
                 {
                     gridCell.TextColor = gridStyle?.RowTextColor;
-                    Label sfLabel = dataColumn.ColumnElement?.Content as Label;
+                    SfNumericEntry sfLabel = dataColumn.ColumnElement?.Content as SfNumericEntry;
                     if (sfLabel != null)
                     {
                         sfLabel.TextColor = gridStyle?.RowTextColor;
