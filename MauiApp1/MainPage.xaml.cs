@@ -30,7 +30,7 @@ namespace MauiApp1
                 if (this.DataGrid.SelectedRows.Any(row => row == dataColumn.RowData))
                 {
                     gridCell.TextColor = gridStyle?.SelectedRowTextColor;
-                    Label sfLabel = dataColumn.ColumnElement?.Content as Label;
+                    SfDataGridLabel sfLabel = dataColumn.ColumnElement?.Content as SfDataGridLabel;
                     if (sfLabel != null)
                     {
                         sfLabel.TextColor = gridStyle?.SelectedRowTextColor;
@@ -39,7 +39,7 @@ namespace MauiApp1
                 else
                 {
                     gridCell.TextColor = gridStyle?.RowTextColor;
-                    Label sfLabel = dataColumn.ColumnElement?.Content as Label;
+                    SfDataGridLabel sfLabel = dataColumn.ColumnElement?.Content as SfDataGridLabel;
                     if (sfLabel != null)
                     {
                         sfLabel.TextColor = gridStyle?.RowTextColor;
